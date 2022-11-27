@@ -1,5 +1,8 @@
+from ..configs import train_config
+
 import numpy as np
 import torch
+import torch.nn.functional as F
 
 def pad_1D(inputs, PAD=0):
 
