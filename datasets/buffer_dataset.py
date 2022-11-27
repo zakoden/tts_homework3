@@ -1,3 +1,5 @@
+from torch.utils.data import Dataset
+
 class BufferDataset(Dataset):
     def __init__(self, buffer):
         self.buffer = buffer
