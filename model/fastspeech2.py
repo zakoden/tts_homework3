@@ -1,7 +1,12 @@
 from .modules import FFTBlock
 from .variance_adaptor import LengthRegulator, VariancePredictor
+from ..configs import model_config, mel_config
 
 import torch
+from torch import nn
+import torch.nn.functional as F
+
+import numpy as np
 
 
 def get_non_pad_mask(seq):
