@@ -1,5 +1,8 @@
+from ..configs import FastSpeechConfig, train_config
+
 import torch
 from torch import nn
+import torch.nn.functional as F
 
 def create_alignment(base_mat, duration_predictor_output):
     N, L = duration_predictor_output.shape
