@@ -1,4 +1,5 @@
-from text import text_to_sequence
+from ...text import text_to_sequence
+from ... import audio
 
 def process_text(train_text_path):
     with open(train_text_path, "r", encoding="utf-8") as f:
