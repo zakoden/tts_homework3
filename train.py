@@ -1,15 +1,15 @@
-import collections
-import warnings
-
-import numpy as np
-import torch
-import collections
-import warnings
-
-import numpy as np
-import torch
 import sys
 sys.path.append('.')
+
+import os
+import numpy as np
+import torch
+import collections
+import warnings
+
+import numpy as np
+import torch
+from torch import nn
 
 from torch.utils.data import DataLoader
 from torch.optim.lr_scheduler  import OneCycleLR
@@ -25,7 +25,7 @@ from tts_homework3 import dataloader
 from tts_homework3.model import FastSpeech
 from tts_homework3 import losses
 from tts_homework3 import synthesis
-from tts_homework3.logging import logger
+from tts_homework3.logger import logger
 
 warnings.filterwarnings("ignore", category=UserWarning)
 
