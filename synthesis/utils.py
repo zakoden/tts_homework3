@@ -1,6 +1,11 @@
 import wandb
 from ..logger import logger
 import waveglow
+import numpy as np
+import torch
+from ..configs import train_config
+import os
+import text
 
 def one_synthesis(model, phn, alpha_duration=1.0, alpha_pitch=1.0, alpha_energy=1.0):
     text = np.array(phn)
