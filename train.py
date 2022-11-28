@@ -3,21 +3,29 @@ import warnings
 
 import numpy as np
 import torch
+import collections
+import warnings
+
+import numpy as np
+import torch
 import sys
 sys.path.append('.')
 
 from torch.utils.data import DataLoader
+from torch.optim.lr_scheduler  import OneCycleLR
+
 import waveglow
 import text
 import audio
 import utils
 
-from .configs import mel_config, model_config, train_config
-from . import datasets
-from . import dataloader
-from .model import FastSpeech
-from . import losses
-from . import synthesis
+from tts_homework3.configs import mel_config, model_config, train_config
+from tts_homework3 import datasets
+from tts_homework3 import dataloader
+from tts_homework3.model import FastSpeech
+from tts_homework3 import losses
+from tts_homework3 import synthesis
+from tts_homework3.logging import logger
 
 warnings.filterwarnings("ignore", category=UserWarning)
 
@@ -59,8 +67,6 @@ def main():
         "max_lr": train_config.learning_rate,
         "pct_start": 0.1
     })
-    
-    logger = WanDBWriter(train_config)
     
     WaveGlow = utils.get_WaveGlow()
     WaveGlow = WaveGlow.cuda()
