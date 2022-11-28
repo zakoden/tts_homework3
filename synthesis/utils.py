@@ -1,5 +1,6 @@
 import wandb
 from ..logger import logger
+import waveglow
 
 def one_synthesis(model, phn, alpha_duration=1.0, alpha_pitch=1.0, alpha_energy=1.0):
     text = np.array(phn)
@@ -16,7 +17,7 @@ def one_synthesis(model, phn, alpha_duration=1.0, alpha_pitch=1.0, alpha_energy=
                             alpha_energy=alpha_energy)
     return mel.contiguous().transpose(1, 2)
 
-def log_synthesis(model):
+def log_synthesis(model, WaveGlow):
     tests = [ 
         "A defibrillator is a device that gives a high energy electric shock to the heart of someone who is in cardiac arrest",
         "Massachusetts Institute of Technology may be best known for its math, science and engineering education",
