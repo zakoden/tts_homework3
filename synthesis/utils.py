@@ -1,4 +1,5 @@
 import wandb
+from ..logging import logger
 
 def one_synthesis(model, phn, alpha_duration=1.0, alpha_pitch=1.0, alpha_energy=1.0):
     text = np.array(phn)
