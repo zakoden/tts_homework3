@@ -143,7 +143,7 @@ def main():
                     )}, os.path.join(train_config.checkpoint_path, 'checkpoint_%d.pth.tar' % current_step))
                     print("save model at step %d ..." % current_step)
 
-                    synthesis.log_synthesis(model)
+                    synthesis.log_synthesis(model, WaveGlow)
 
 
 if __name__ == "__main__":
